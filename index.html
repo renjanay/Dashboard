@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization</title>
+    <!-- Add Plotly JavaScript library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Render the Plotly plot using JavaScript -->
+    <div id="plotly-plot"></div>
+
+    <script>
+        // Retrieve the JSON data for the plot from Flask's variable
+        var plotJson = {{ plot_json|safe }};
+
+        // Render the plot using Plotly
+        Plotly.newPlot('plotly-plot', plotJson.data, plotJson.layout);
+    </script>
+</body>
+</html>
